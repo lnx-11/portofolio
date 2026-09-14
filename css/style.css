@@ -320,6 +320,7 @@ h1, h2, h3, .logo {
     font-weight: 500;
 }
 
+
 /* Contact Links & Footer */
 .contact-card-wrapper {
     display: flex;
@@ -347,6 +348,33 @@ footer {
     background: var(--dark);
     color: #94a3b8;
     font-size: 0.88rem;
+}
+
+/* ============================================================
+   PROTEKSI FOTO PROFIL (SOLUSI 2 - OVERLAY TRANSPARAN)
+   ============================================================ */
+
+.profile-card {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Lapisan transparan di atas foto */
+.img-protection-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background: transparent;
+}
+
+/* Mencegah teks/foto di-select atau di-drag */
+.hero-image img {
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
 }
 
 /* Style khusus logo dan tombol WhatsApp */
