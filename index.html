@@ -21,16 +21,22 @@
 <body>
 
     <!-- Navigation Bar -->
-    <header class="navbar">
-        <div class="logo">LИX<span class="dot">.</span>DEV</div>
-        <nav>
-            <a href="#tentang">Tentang</a>
-            <a href="#pengalaman">Pengalaman</a>
-            <a href="#keahlian">Keahlian</a>
-            <a href="#pendidikan">Pendidikan</a>
-            <a href="#kontak" class="btn-nav">Let's Connect</a>
-        </nav>
-    </header>
+<header class="navbar">
+    <div class="logo">LИX<span class="dot">.</span>DEV</div>
+    
+    <!-- Tambahkan tombol ini -->
+    <button class="hamburger" id="hamburger-btn" aria-label="Toggle Menu">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <nav id="nav-menu">
+        <a href="#tentang">Tentang</a>
+        <a href="#pengalaman">Pengalaman</a>
+        <a href="#keahlian">Keahlian</a>
+        <a href="#pendidikan">Pendidikan</a>
+        <a href="#kontak" class="btn-nav">Let's Connect</a>
+    </nav>
+</header>
 
     <!-- Hero Section -->
     <section id="tentang" class="hero-container">
@@ -212,7 +218,7 @@ perusahaan.</li>
                 </div>
             </div>
 
-            <div class="exp-card">
+                 <div class="exp-card">
                 <div class="exp-card-body">
                     <h3>Pengalaman Organisasi</h3>
                     <ul class="exp-list">
