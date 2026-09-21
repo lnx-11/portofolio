@@ -1,20 +1,28 @@
 /* ============================================================
-   STYLE.CSS - Gen Z Aesthetic Theme (Indigo & Slate)
+   STYLE.CSS - Tema Portfolio Modern
+   Struktur ini dibuat agar mudah dipahami pemula.
+   Kode dibagi per bagian: warna, navbar, hero, card, tombol, dll.
    ============================================================ */
 
+/* 1. VARIABLE WARNA / GLOBAL */
 :root {
-    --primary: #4f46e5;       /* Modern Indigo / Electric Blue */
-    --primary-hover: #4338ca;
-    --accent: #06b6d4;        /* Cyan Highlight */
-    --dark: #0f172a;          /* Slate Dark */
-    --light-bg: #f8fafc;      /* Soft Ice White */
-    --card-bg: #ffffff;       
-    --text-muted: #64748b;
-    --border-color: #e2e8f0;
-    --radius-lg: 20px;
-    --radius-md: 12px;
+    --primary: #4f46e5;
+    --primary-hover: #312e81;
+    --accent: #22d3ee;
+    --accent-2: #8b5cf6;
+    --dark: #0f172a;
+    --light-bg: #f3f6ff;
+    --panel-bg: #f8fafc;
+    --card-bg: rgba(255, 255, 255, 0.92);
+    --card-soft: #eef2ff;
+    --text-muted: #5f6f89;
+    --border-color: rgba(148, 163, 184, 0.32);
+    --radius-lg: 24px;
+    --radius-md: 14px;
+    --shadow-soft: 0 18px 45px rgba(79, 70, 229, 0.10);
 }
 
+/* 2. RESET DASAR */
 * {
     margin: 0;
     padding: 0;
@@ -22,30 +30,48 @@
     font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+/* 3. BODY DAN LATAR BELAKANG */
 body {
-    background-color: var(--light-bg);
+    background:
+        radial-gradient(circle at top left, rgba(99, 102, 241, 0.18), transparent 26%),
+        radial-gradient(circle at bottom right, rgba(34, 211, 238, 0.16), transparent 24%),
+        linear-gradient(180deg, #f5f4ff 0%, #eef4ff 35%, #f8fafc 100%);
     color: var(--dark);
     line-height: 1.6;
 }
 
-/* Typography Headings */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(120deg, rgba(255,255,255,0.15), rgba(255,255,255,0));
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* 4. TIPEGRAF DAN JUDUL */
 h1, h2, h3, .logo {
     font-family: 'Space Grotesk', 'Plus Jakarta Sans', sans-serif;
     letter-spacing: -0.02em;
 }
 
-/* Navbar */
+/* 5. NAVBAR */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1.2rem 8%;
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(12px);
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(14px);
     position: sticky;
     top: 0;
     z-index: 100;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.14);
 }
 
 .logo { 
@@ -54,7 +80,7 @@ h1, h2, h3, .logo {
     gap: 0.6rem;
     font-weight: 700; 
     font-size: 1.3rem; 
-    color: var(--dark);
+    color: #ffffff;
 }
 
 .logo-box {
@@ -93,22 +119,26 @@ h1, h2, h3, .logo {
 .navbar nav a {
     margin-left: 0;
     text-decoration: none;
-    color: var(--dark);
+    color: rgba(255, 255, 255, 0.9);
     font-weight: 600;
     font-size: 0.95rem;
-    transition: color 0.2s ease;
+    transition: color 0.2s ease, background-color 0.2s ease;
+    padding: 0.4rem 0.6rem;
+    border-radius: 8px;
 }
 
 .navbar nav a:hover {
-    color: var(--primary);
+    color: #fff;
+    background: rgba(255, 255, 255, 0.06);
 }
 
 .btn-nav {
-    background: var(--dark);
+    background: linear-gradient(135deg, var(--primary), var(--accent-2));
     color: #fff !important;
-    padding: 0.5rem 1rem;
-    border-radius: var(--radius-md);
+    padding: 0.6rem 1.1rem;
+    border-radius: 12px;
     transition: transform 0.2s ease !important;
+    box-shadow: 0 10px 20px rgba(79, 70, 229, 0.25);
 }
 
 .btn-nav:hover {
@@ -121,7 +151,7 @@ h1, h2, h3, .logo {
     -webkit-text-fill-color: transparent;
 }
 
-/* Buttons */
+/* 6. TOMBOL */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -135,15 +165,16 @@ h1, h2, h3, .logo {
 }
 
 .btn.primary { 
-    background: var(--primary); 
+    background: linear-gradient(135deg, var(--primary), var(--accent-2));
     color: #fff; 
-    box-shadow: 0 4px 14px rgba(79, 70, 229, 0.3);
+    box-shadow: 0 12px 25px rgba(79, 70, 229, 0.25);
+    letter-spacing: 0.01em;
 }
 
 .btn.primary:hover {
-    background: var(--primary-hover);
+    background: linear-gradient(135deg, var(--primary-hover), var(--primary));
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(79, 70, 229, 0.4);
+    box-shadow: 0 16px 28px rgba(79, 70, 229, 0.35);
 }
 
 .btn.secondary { 
@@ -158,8 +189,18 @@ h1, h2, h3, .logo {
     transform: translateY(-2px);
 }
 
-/* Section Header */
+/* 7. BAGIAN SECTION */
 .section { padding: 5rem 8%; }
+
+.exp-section {
+    position: relative;
+    padding-top: 5.2rem;
+}
+
+.exp-section:nth-child(even) {
+    background: linear-gradient(180deg, rgba(238,242,255,0.55), rgba(255,255,255,0));
+    border-radius: 30px;
+}
 
 .section-header {
     text-align: center;
@@ -178,51 +219,66 @@ h1, h2, h3, .logo {
     font-size: 1rem;
 }
 
-/* Hero Badge */
+/* 8. HERO / BAGIAN DEPAN */
 .badge-hero {
     display: inline-block;
-    background: #e0e7ff;
+    background: linear-gradient(135deg, rgba(79,70,229,0.15), rgba(34,211,238,0.18));
     color: var(--primary);
-    padding: 0.35rem 0.9rem;
+    padding: 0.45rem 1rem;
     border-radius: 50px;
-    font-weight: 700;
+    font-weight: 800;
     font-size: 0.8rem;
     margin-bottom: 1rem;
+    border: 1px solid rgba(79, 70, 229, 0.12);
+    box-shadow: 0 8px 18px rgba(79,70,229,0.08);
 }
 
 /* Membuat paragraf deskripsi intro rata kanan-kiri */
 .hero-text p {
     text-align: justify;
+    color: var(--text-muted);
+    max-width: 700px;
 }
 
-/* Cards (Modern Glass/Bento Visual) */
+/* 9. KARTU PENGALAMAN DAN KEAHLIAN */
 .exp-card {
-    background: var(--card-bg);
+    background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(239,246,255,0.94));
     border-radius: var(--radius-lg);
-    border: 1px solid var(--border-color);
+    border: 1px solid rgba(148, 163, 184, 0.28);
     overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    box-shadow: var(--shadow-soft);
     transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
+    position: relative;
+}
+
+.exp-card::before {
+    content: "";
+    position: absolute;
+    inset: 0 auto auto 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
 }
 
 .exp-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-    border-color: #cbd5e1;
+    box-shadow: 0 22px 42px rgba(79, 70, 229, 0.12);
+    border-color: rgba(79, 70, 229, 0.2);
 }
 
 .card-tag {
     align-self: flex-start;
-    background: #f1f5f9;
+    background: linear-gradient(135deg, rgba(79,70,229,0.08), rgba(34,211,238,0.08));
     color: var(--primary);
     font-size: 0.75rem;
-    font-weight: 700;
-    padding: 0.25rem 0.6rem;
-    border-radius: 6px;
+    font-weight: 800;
+    padding: 0.28rem 0.7rem;
+    border-radius: 8px;
     margin-bottom: 0.75rem;
     text-transform: uppercase;
+    border: 1px solid rgba(79, 70, 229, 0.08);
 }
 
 .card-img-wrapper img {
@@ -288,7 +344,7 @@ h1, h2, h3, .logo {
     top: -2px;
 }
 
-/* Skill Pills (Badge Gen Z) */
+/* 10. TAG SKILL */
 .skills-tags {
     display: flex;
     flex-wrap: wrap;
@@ -297,16 +353,16 @@ h1, h2, h3, .logo {
 }
 
 .skill-pill {
-    background: #f1f5f9;
+    background: linear-gradient(135deg, rgba(79, 70, 229, 0.08), rgba(34, 211, 238, 0.08));
     color: var(--dark);
     padding: 0.35rem 0.75rem;
     border-radius: 50px;
     font-size: 0.8rem;
     font-weight: 600;
-    border: 1px solid #e2e8f0;
+    border: 1px solid rgba(79, 70, 229, 0.12);
 }
 
-/* Custom Edu Badge & Dividers */
+/* 11. PENDIDIKAN DAN ORGANISASI */
 .badge-gpa {
     background: #dcfce7;
     color: #15803d;
@@ -355,7 +411,7 @@ h1, h2, h3, .logo {
 }
 
 
-/* Contact Links & Footer */
+/* 12. KONTAK DAN FOOTER */
 .contact-card-wrapper {
     display: flex;
     justify-content: center;
@@ -374,6 +430,11 @@ h1, h2, h3, .logo {
     justify-content: center;
     gap: 1rem;
     flex-wrap: wrap;
+}
+
+.contact-card {
+    background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(238,242,255,0.92));
+    border: 1px solid rgba(79, 70, 229, 0.12);
 }
 
 footer {
