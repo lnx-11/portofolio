@@ -151,6 +151,66 @@ h1, h2, h3, .logo {
     -webkit-text-fill-color: transparent;
 }
 
+.hero-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.8rem;
+    width: min(100%, 520px);
+    margin-top: 1.8rem;
+}
+
+.hero-buttons .btn.primary {
+    width: 100%;
+    justify-content: center;
+    min-height: 54px;
+}
+
+.hero-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 0.7rem;
+    width: 100%;
+    align-items: stretch;
+}
+
+.mini-stat-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 0.75rem 0.65rem;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.86);
+    border: 1px solid rgba(79, 70, 229, 0.1);
+    box-shadow: 0 8px 18px rgba(79, 70, 229, 0.05);
+    min-height: 72px;
+    min-width: 0;
+}
+
+.mini-stat-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 46px;
+    height: 46px;
+    padding: 0 0.55rem;
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: #fff;
+    font-size: 0.84rem;
+    font-weight: 800;
+    box-shadow: 0 8px 16px rgba(79, 70, 229, 0.16);
+}
+
+.mini-stat-label {
+    color: var(--dark);
+    font-size: 0.66rem;
+    line-height: 1.2;
+    font-weight: 700;
+    text-align: left;
+}
+
 /* 6. TOMBOL */
 .btn {
     display: inline-flex;
